@@ -15,8 +15,9 @@ NUMBER_COL = [
     "EPS past 5Y",
     "EPS next 5Y",
     "Sales past 5Y",
-    "EPS Q/Q",
+    "EPS",
     "Sales Q/Q",
+    "Sales Growth TTM",
     "Outstanding",
     "Float",
     "Insider Own",
@@ -152,6 +153,7 @@ CUSTOM_SCREENER_COLUMNS = {
     86: "Open",
     87: "High",
     88: "Low",
+    89: "Sales Growth TTM",
 }
 
 CUSTOM_GROUP_COLUMNS = {
@@ -848,6 +850,28 @@ util_dict = {
         },
         "Sales growthqtr over qtr": {
             "prefix": "fa_salesqoq",
+            "option": {
+                "Any": "",
+                "Negative (<0%)": "neg",
+                "Positive (>0%)": "pos",
+                "Positive Low (0-10%)": "poslow",
+                "High (>25%)": "high",
+                "Under 5%": "u5",
+                "Under 10%": "u10",
+                "Under 15%": "u15",
+                "Under 20%": "u20",
+                "Under 25%": "u25",
+                "Under 30%": "u30",
+                "Over 5%": "o5",
+                "Over 10%": "o10",
+                "Over 15%": "o15",
+                "Over 20%": "o20",
+                "Over 25%": "o25",
+                "Over 30%": "o30",
+            },
+        },
+        "Sales Growth TTM": {
+            "prefix": "fa_salesyoyttm",
             "option": {
                 "Any": "",
                 "Negative (<0%)": "neg",
